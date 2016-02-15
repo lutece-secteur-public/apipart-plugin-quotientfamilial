@@ -45,6 +45,11 @@ public class QuotientFamilial implements Serializable
     private static final long serialVersionUID = 1L;
     private int _nRevenuFiscalReference;
     private int _nNombreParts;
+    private int _nNombrePersonnesCharge;
+    private int _nMontantImpot;
+    private String _strSituationFamille;
+    private String _strAnneeImpots;
+    private String _strAnneeRevenus;
 
     /**
      * Returns the RevenuFiscalReference
@@ -85,8 +90,103 @@ public class QuotientFamilial implements Serializable
     }
     
     /**
-     * Returns the Quotient
-     * @return The Quotient
+     * Returns the _nNombrePersonnesCharge
+     * @return The _nNombrePersonnesCharge
+     */
+    public int getNombrePersonnesCharge( )
+    {
+        return _nNombrePersonnesCharge;
+    }
+
+    /**
+     * Sets the _nNombrePersonnesCharge
+     * @param nNombrePersonnesCharge The _nNombrePersonnesCharge
+     */ 
+    @JsonProperty( "nombrePersonnesCharge" )
+    public void setNombrePersonnesCharge( int nNombrePersonnesCharge )
+    {
+        _nNombrePersonnesCharge = nNombrePersonnesCharge;
+    }
+    
+    /**
+     * Returns the _nMontantImpot
+     * @return The _nMontantImpot
+     */
+    public int getMontantImpot( )
+    {
+        return _nMontantImpot;
+    }
+
+    /**
+     * Sets the _nMontantImpot
+     * @param nMontantImpot The _nMontantImpot
+     */ 
+    @JsonProperty( "montantImpot" )
+    public void setMontantImpot( int nMontantImpot )
+    {
+        _nMontantImpot = nMontantImpot;
+    }
+    
+    /**
+     * Returns the _strSituationFamille
+     * @return The _strSituationFamille
+     */
+    public String getSituationFamille( )
+    {
+        return _strSituationFamille;
+    }
+
+    /**
+     * Sets the _strSituationFamille
+     * @param strSituationFamille The _strSituationFamille
+     */ 
+    @JsonProperty( "situationFamille" )
+    public void setSituationFamille( String strSituationFamille )
+    {
+        _strSituationFamille = strSituationFamille;
+    }
+    
+    /**
+     * Returns the _strAnneeImpots
+     * @return The _strAnneeImpots
+     */
+    public String getAnneeImpots( )
+    {
+        return _strAnneeImpots;
+    }
+
+    /**
+     * Sets the _strAnneeImpots
+     * @param strAnneeImpots The _strAnneeImpots
+     */ 
+    @JsonProperty( "anneeImpots" )
+    public void setAnneeImpots( String strAnneeImpots )
+    {
+        _strAnneeImpots = strAnneeImpots;
+    }
+    
+    /**
+     * Returns the _strAnneeRevenus
+     * @return The _strAnneeRevenus
+     */
+    public String getAnneeRevenus( )
+    {
+        return _strAnneeRevenus;
+    }
+
+    /**
+     * Sets the _strAnneeRevenus
+     * @param strAnneeRevenus The _strAnneeRevenus
+     */ 
+    @JsonProperty( "anneeRevenus" )
+    public void setAnneeRevenus( String strAnneeRevenus )
+    {
+        _strAnneeRevenus = strAnneeRevenus;
+    }
+    
+    /**
+     * Returns the Quotient Familial
+     * @return The Quotient Familial
      */
     public int getQuotientFamilial()
     {
