@@ -33,6 +33,7 @@
  */ 
 package fr.paris.lutece.plugins.quotientfamilial.business;
 
+import fr.paris.lutece.plugins.apipart.business.InformationsClient;
 import java.io.Serializable;
 import org.codehaus.jackson.annotate.JsonProperty;
 
@@ -40,7 +41,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 /**
  * This is the business class for the object QuotientFamilial
  */ 
-public class QuotientFamilial implements Serializable
+public class QuotientFamilial extends InformationsClient implements Serializable
 {
     private static final long serialVersionUID = 1L;
     private int _nRevenuFiscalReference;
