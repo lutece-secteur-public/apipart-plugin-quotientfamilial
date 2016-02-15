@@ -43,11 +43,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class QuotientFamilial implements Serializable
 {
     private static final long serialVersionUID = 1L;
-    
-    @JsonProperty( "revenuFiscalReference" )
     private int _nRevenuFiscalReference;
-    
-    @JsonProperty( "nombreParts" )
     private int _nNombreParts;
 
     /**
@@ -63,6 +59,7 @@ public class QuotientFamilial implements Serializable
      * Sets the RevenuFiscalReference
      * @param nRevenuFiscalReference The RevenuFiscalReference
      */ 
+    @JsonProperty( "revenuFiscalReference" )
     public void setRevenuFiscalReference( int nRevenuFiscalReference )
     {
         _nRevenuFiscalReference = nRevenuFiscalReference;
@@ -81,6 +78,7 @@ public class QuotientFamilial implements Serializable
      * Sets the NombreParts
      * @param nNombreParts The NombreParts
      */ 
+    @JsonProperty( "nombreParts" )
     public void setNombreParts( int nNombreParts )
     {
         _nNombreParts = nNombreParts;
