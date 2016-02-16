@@ -34,6 +34,7 @@
 package fr.paris.lutece.plugins.quotientfamilial.business;
 
 import fr.paris.lutece.plugins.apipart.business.InformationsClient;
+import fr.paris.lutece.plugins.quotientfamilial.service.TranchesService;
 import java.io.Serializable;
 import org.codehaus.jackson.annotate.JsonProperty;
 
@@ -192,5 +193,14 @@ public class QuotientFamilial extends InformationsClient implements Serializable
     public int getQuotientFamilial()
     {
         return _nRevenuFiscalReference / ( 12 * _nNombreParts );
+    }
+    
+    /**
+     * Returns the Tranche
+     * @return The Tranche
+     */
+    public int getTranche()
+    {
+        return TranchesService.getTranche( getQuotientFamilial() );
     }
 }
