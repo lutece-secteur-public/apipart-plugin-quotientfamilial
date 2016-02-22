@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Quotient familial et tarifs</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-4">
+        <div class="panel panel-info" data-effect="helix">
+            <div class="panel-heading">Vos infos</div>
+            <div class="panel-body">
+                <p>${quotientFamilial.declarant1.prenoms} ${quotientFamilial.declarant1.nom} (${quotientFamilial.declarant1.dateNaissance})</p>
+                <#if quotientFamilial.declarant2?? && quotientFamilial.declarant2.nom != "" >
+                <p>${quotientFamilial.declarant2.prenoms} ${quotientFamilial.declarant2.nom} (${quotientFamilial.declarant2.dateNaissance})</p>
+                </#if>
+                <p>${quotientFamilial.situationFamille}</p>
+                <#if quotientFamilial.foyerFiscal?? ><p>${quotientFamilial.foyerFiscal.adresse} (${quotientFamilial.foyerFiscal.annee})</p></#if>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <div class="jumbotron">
+            <div class="form-group">
+                <p class="form-control-static">#i18n{quotientfamilial.attribute.revenuFiscalReference} : <strong>${quotientFamilial.revenuFiscalReference} &euro;</strong></p>
+                <p class="form-control-static">#i18n{quotientfamilial.attribute.nombreParts} : <strong>${quotientFamilial.nombreParts}</strong></p>
+                <p class="form-control-static">#i18n{quotientfamilial.attribute.quotientFamilial} : <strong>${quotientFamilial.quotientFamilial} &euro;</strong></p>
+                <p class="form-control-static">#i18n{quotientfamilial.attribute.tranche} : <strong>${quotientFamilial.tranche}</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <div class="jumbotron">
+            <div class="form-group">
+                <p class="form-control-static"><strong>Tarifs applicables avec votre quotient familial :</strong></p>
+                <p class="form-control-static">Classes de d&eacute;couverte par jour : 13,58 &euro;</p>
+                <p class="form-control-static">Centre de loisirs :</p>
+                <ul>
+                    <li>Mercredi apr&egrave;s-midi : 2,67 &euro;</li>
+                    <li>Vacances sans repas : 4,45 &euro;</li>
+                    <li>Vacances avec repas : 8,07 &euro;</li>
+                    <li>Etudes surveill&eacute;es : 5,70 &euro;</li>
+                    <li>Ateliers bleus du soir : 11,93 &euro;</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h1>Quotient familial et tarifs</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="jumbotron">
+            <form method="POST" id="quotientfamilial" class="form-horizontal" action="jsp/site/Portal.jsp?page=quotientfamilial">
+                <#if quotientFamilial.foyerFiscal?? >
+                <div class="form-group">
+                    <label for="foyerFiscalAnnee" class="col-sm-3 control-label">#i18n{apipart.attribute.foyerFiscal.annee}</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled id="foyerFiscalAnnee" name="foyerFiscalAnnee" type="text" value="${quotientFamilial.foyerFiscal.annee!''}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="foyerFiscalAdresse" class="col-sm-3 control-label">#i18n{apipart.attribute.foyerFiscal.adresse}</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled id="foyerFiscalAdresse" name="foyerFiscalAdresse" type="text" value="${quotientFamilial.foyerFiscal.adresse!''}">
+                    </div>
+                </div>
+                </#if>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <h3>#i18n{apipart.attribute.declarant.declarant1}</h3>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="declarant1Nom" class="col-sm-3 control-label">#i18n{apipart.attribute.declarant.nom}</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled id="declarant1Nom" name="declarant1Nom" type="text" value="${quotientFamilial.declarant1.nom!''}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="declarant1NomNaissance" class="col-sm-3 control-label">#i18n{apipart.attribute.declarant.nomNaissance}</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled id="declarant1NomNaissance" name="declarant1NomNaissance" type="text" value="${quotientFamilial.declarant1.nomNaissance!''}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="declarant1Prenoms" class="col-sm-3 control-label">#i18n{apipart.attribute.declarant.prenoms}</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled id="declarant1Prenoms" name="declarant1Prenoms" type="text" value="${quotientFamilial.declarant1.prenoms!''}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="declarant1DateNaissance" class="col-sm-3 control-label">#i18n{apipart.attribute.declarant.dateNaissance}</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled id="declarant1DateNaissance" name="declarant1DateNaissance" type="text" value="${quotientFamilial.declarant1.dateNaissance!''}">
+                    </div>
+                </div>
+                <#if quotientFamilial.declarant2?? && quotientFamilial.declarant2.nom != "" >
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <h3>#i18n{apipart.attribute.declarant.declarant2}</h3>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="declarant2Nom" class="col-sm-3 control-label">#i18n{apipart.attribute.declarant.nom}</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled id="declarant2Nom" name="declarant2Nom" type="text" value="${quotientFamilial.declarant2.nom!''}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="declarant2NomNaissance" class="col-sm-3 control-label">#i18n{apipart.attribute.declarant.nomNaissance}</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled id="declarant2NomNaissance" name="declarant2NomNaissance" type="text" value="${quotientFamilial.declarant2.nomNaissance!''}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="declarant2Prenoms" class="col-sm-3 control-label">#i18n{apipart.attribute.declarant.prenoms}</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled id="declarant2Prenoms" name="declarant2Prenoms" type="text" value="${quotientFamilial.declarant2.prenoms!''}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="declarant2DateNaissance" class="col-sm-3 control-label">#i18n{apipart.attribute.declarant.dateNaissance}</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" disabled id="declarant2DateNaissance" name="declarant2DateNaissance" type="text" value="${quotientFamilial.declarant2.dateNaissance!''}">
+                    </div>
+                </div>
+                </#if> 
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-8">
+                        <button name="view_etape3" type="submit" class="btn btn-primary">
+                          #i18n{quotientfamilial.button.etape2}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

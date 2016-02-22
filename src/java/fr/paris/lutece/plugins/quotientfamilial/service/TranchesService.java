@@ -56,7 +56,7 @@ public class TranchesService
         
         for( int i = 0 ; i < _tranches.size() - 1 ; i++ )
         {
-            if( nQuotient < _tranches.get(i) )
+            if( nQuotient <= _tranches.get(i) )
             {
                 return i+1;
             }

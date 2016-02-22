@@ -53,13 +53,19 @@ import javax.servlet.http.HttpServletRequest;
 public class QuotientFamilialXPage extends MVCApplication
 {
     // VIEWS
-    public static final String VIEW_QUOTIENT_FAMILIAL = "quotientFamilial";
+    public static final String VIEW_HOME = "home";
+    public static final String VIEW_ETAPE1 = "etape1";
+    public static final String VIEW_ETAPE2 = "etape2";
+    public static final String VIEW_ETAPE3 = "etape3";
 
     // ACTIONS
-    public static final String ACTION_QUOTIENT_FAMILIAL = "quotientFamilial";
+    public static final String ACTION_QUOTIENT_FAMILIAL = "quotientfamilial";
 
     // TEMPLATES
-    private static final String TEMPLATE_QUOTIENT_FAMILIAL = "/skin/plugins/quotientfamilial/quotient-familial.html";
+    private static final String TEMPLATE_HOME = "/skin/plugins/quotientfamilial/home.html";
+    private static final String TEMPLATE_ETAPE1 = "/skin/plugins/quotientfamilial/etape1.html";
+    private static final String TEMPLATE_ETAPE2 = "/skin/plugins/quotientfamilial/etape2.html";
+    private static final String TEMPLATE_ETAPE3 = "/skin/plugins/quotientfamilial/etape3.html";
     
     // PARAMETERS
     private static final String PARAMETER_NUMERO_FISCAL = "numeroFiscal";
@@ -86,8 +92,19 @@ public class QuotientFamilialXPage extends MVCApplication
      * @param request The HTTP request
      * @return The view
      */
-    @View( value = VIEW_QUOTIENT_FAMILIAL, defaultView = true )
-    public XPage viewQuotientFamilial( HttpServletRequest request )
+    @View( value = VIEW_HOME, defaultView = true )
+    public XPage viewHome( HttpServletRequest request )
+    {
+        return getXPage( TEMPLATE_HOME, request.getLocale(  ) );
+    }
+    
+    /**
+     * Returns the content of the page quotientfamilial.
+     * @param request The HTTP request
+     * @return The view
+     */
+    @View( VIEW_ETAPE1 )
+    public XPage viewEtape1( HttpServletRequest request )
     {
         if(_informationsFiscales == null)
         {
@@ -95,8 +112,7 @@ public class QuotientFamilialXPage extends MVCApplication
         }
         Map<String, Object> model = getModel(  );
         model.put( MARK_INFORMATIONS_FISCALES, _informationsFiscales );
-        model.put( MARK_QUOTIENT_FAMILIAL , _quotientFamilial );
-        return getXPage( TEMPLATE_QUOTIENT_FAMILIAL, request.getLocale(  ), model );
+        return getXPage( TEMPLATE_ETAPE1, request.getLocale(  ), model );
     }
     
     /**
@@ -136,7 +152,7 @@ public class QuotientFamilialXPage extends MVCApplication
         
         if( !formComplete )
         {
-            return redirectView( request, VIEW_QUOTIENT_FAMILIAL );
+            return redirectView( request, VIEW_ETAPE1 );
         }
         else
         {
@@ -145,8 +161,46 @@ public class QuotientFamilialXPage extends MVCApplication
             if ( _quotientFamilial == null )
             {
                 addError( ERROR_QUOTIENT_FAMILIAL, getLocale( request ) );
+                return redirectView( request, VIEW_ETAPE1 );
             }
-            return redirectView( request, VIEW_QUOTIENT_FAMILIAL );
+            else
+            {
+                return redirectView( request, VIEW_ETAPE2 );
+            }
         }
+    }
+    
+    /**
+     * Returns the content of the page quotientfamilial.
+     * @param request The HTTP request
+     * @return The view
+     */
+    @View( VIEW_ETAPE2 )
+    public XPage viewEtape2( HttpServletRequest request )
+    {
+        if(_informationsFiscales == null)
+        {
+            _informationsFiscales = new InformationsFiscales( );
+        }
+        Map<String, Object> model = getModel(  );
+        model.put( MARK_QUOTIENT_FAMILIAL, _quotientFamilial );
+        return getXPage( TEMPLATE_ETAPE2, request.getLocale(  ), model );
+    }
+    
+    /**
+     * Returns the content of the page quotientfamilial.
+     * @param request The HTTP request
+     * @return The view
+     */
+    @View( VIEW_ETAPE3 )
+    public XPage viewEtape3( HttpServletRequest request )
+    {
+        if(_informationsFiscales == null)
+        {
+            _informationsFiscales = new InformationsFiscales( );
+        }
+        Map<String, Object> model = getModel(  );
+        model.put( MARK_QUOTIENT_FAMILIAL, _quotientFamilial );
+        return getXPage( TEMPLATE_ETAPE3, request.getLocale(  ), model );
     }
 }
